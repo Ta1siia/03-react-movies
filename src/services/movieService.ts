@@ -1,5 +1,12 @@
 import axios from "axios";
-import type { Movie, TMDBResponse } from "../types/movie";
+import type { Movie } from "../types/movie";
+
+interface TMDBResponse {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
+}
 
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
   const response = await axios.get<TMDBResponse>(

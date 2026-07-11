@@ -50,9 +50,6 @@ function App() {
       )}
       {loading && <Loader />}
       {error && <ErrorMessage />}
-      {!loading && !error && movies.length > 0 && (
-        <MovieGrid movies={movies} onSelect={handleSelect} />
-      )}
     </div>
   );
 }
